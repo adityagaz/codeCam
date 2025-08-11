@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-200;
+  }
+  
+  /* Dark mode transitions */
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  /* Smooth transitions for theme switching */
+  * {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-lg hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-800;
+  }
+  
+  .nav-link:hover {
+    @apply transform translate-y-[-1px];
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+  
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Glass morphism effects */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-gray-900/10 backdrop-blur-md border border-gray-700/20;
+  }
+  
+  /* Gradient text animations */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Hover effects for cards */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  /* Button animations */
+  .btn-animate {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  /* Input focus effects */
+  .input-focus {
+    @apply transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400;
+  }
+  
+  /* Video container styles */
+  .video-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16/9;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .video-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .user-name-tag {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Meeting interface styles */
+  .meeting-header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+  }
+  
+  .meeting-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Code editor container */
+  .econt {
+    height: 600px;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+  }
+  
+  /* Chat interface */
+  .chat-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Control buttons */
+  .control-button {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .control-button:hover {
+    @apply shadow-lg;
+  }
+  
+  /* Participant count badge */
+  .participant-badge {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  /* Room ID display */
+  .room-id {
+    @apply bg-white/20 text-white px-4 py-2 rounded-lg font-mono text-sm border border-white/30;
+  }
+  
+  /* Dark mode specific styles */
+  .dark .meeting-header {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark .meeting-card {
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark .chat-container {
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Resize handle styles */
+  .resize-handle {
+    @apply bg-gray-300 dark:bg-gray-600 hover:bg-blue-500 dark:hover:bg-blue-400 cursor-col-resize transition-colors duration-200;
+  }
+  
+  .resize-handle:hover {
+    @apply bg-blue-500 dark:bg-blue-400;
+  }
+  
+  /* Problem statement area */
+  .problem-statement {
+    @apply bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100;
+  }
+  
+  .problem-statement:focus {
+    @apply ring-2 ring-blue-500 dark:ring-blue-400 border-blue-500 dark:border-blue-400;
+  }
+  
+  /* Compact controls */
+  .compact-controls {
+    @apply bg-gray-100 dark:bg-gray-900 border-gray-200 dark:border-gray-700;
+  }
+  
+  .control-button-round {
+    @apply w-12 h-12 rounded-full p-0 transition-all duration-200 hover:scale-110 active:scale-95;
+  }
+  
+  /* Video grid improvements */
+  .video-grid {
+    @apply grid grid-cols-1 gap-4;
+  }
+  
+  /* Header bar improvements */
+  .header-bar {
+    @apply bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+  }
+  
+  .header-stat {
+    @apply text-gray-600 dark:text-gray-300 text-sm font-medium;
+  }
+  
+  /* Code editor improvements */
+  .code-editor-header {
+    @apply bg-gray-200 dark:bg-gray-800 border-gray-300 dark:border-gray-700;
+  }
+  
+  .code-editor-content {
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+}
