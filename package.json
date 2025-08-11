@@ -57,19 +57,7 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "**CollabCam** is a dynamic web platform built to facilitate **online coding interviews**. Designed to streamline the interview process, CollabCam provides a collaborative environment that integrates real-time coding, video monitoring, and chat tools. Interviewers can start a session, share a unique session code with candidates, and conduct an interactive interview that closely mirrors an in-person coding test.",
+  "description": "let's do cp together",
   "main": "index.js",
   "author": "",
   "license": "ISC",
