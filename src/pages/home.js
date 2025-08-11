@@ -209,11 +209,10 @@ const Home = () => {
           <p className={`text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            Revolutionize your coding interviews with AI-powered face detection, 
+            Coding interviews with AI-powered face detection, 
             real-time collaboration, and enterprise-grade security.
-            
+            <br />
             Ask your cp teammates to join and grill you :D
-           
           </p>
 
           {/* CTA Buttons */}

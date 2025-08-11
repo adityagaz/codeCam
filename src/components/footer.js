@@ -30,9 +30,7 @@ const Footer = () => {
 
   return (
     <footer className={`relative overflow-hidden transition-all duration-500 ${
-      isDarkMode 
-        ? 'bg-gradient-to-br from-gray-900 via-slate-900 to-black' 
-        : 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900'
+      isDarkMode ? 'footer-dark' : 'footer-light'
     } text-white`}>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -115,20 +113,20 @@ const Footer = () => {
 
             {/* Product Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white flex items-center">
-                <Zap className="w-5 h-5 mr-2 text-blue-400" />
+              <h3 className={`footer-section-header ${
+                isDarkMode ? 'footer-section-header-light' : 'footer-section-header-light'
+              }`}>
+                <Zap className="w-5 h-5 mr-2" />
                 Product
               </h3>
               <ul className="space-y-3">
                 <li>
                   <Link 
                     to="/features" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
-                      <Shield className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                      <Shield className="w-4 h-4 mr-2  text-white opacity-0 group-hover:opacity-100 transition-all duration-200" />
                       Features
                     </span>
                   </Link>
@@ -136,9 +134,7 @@ const Footer = () => {
                 <li>
                   <Link 
                     to="/pricing" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <Globe className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -149,9 +145,7 @@ const Footer = () => {
                 <li>
                   <Link 
                     to="/integrations" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <Settings className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -162,9 +156,7 @@ const Footer = () => {
                 <li>
                   <Link 
                     to="/api" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <Code className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -177,17 +169,17 @@ const Footer = () => {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white flex items-center">
-                <Building className="w-5 h-5 mr-2 text-purple-400" />
+              <h3 className={`footer-section-header ${
+                isDarkMode ? 'footer-section-header-dark' : 'footer-section-header-dark'
+              }`}>
+                <Building className="w-5 h-5 mr-2" />
                 Company
               </h3>
               <ul className="space-y-3">
                 <li>
                   <Link 
                     to="/about" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <Users className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -198,9 +190,7 @@ const Footer = () => {
                 <li>
                   <Link 
                     to="/careers" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <BookOpen className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -211,9 +201,7 @@ const Footer = () => {
                 <li>
                   <Link 
                     to="/blog" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-white-400' : 'hover:text-black-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <FileText className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -224,9 +212,7 @@ const Footer = () => {
                 <li>
                   <Link 
                     to="/contact" 
-                    className={`text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 block group ${
-                      isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                    }`}
+                    className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
                   >
                     <span className="flex items-center">
                       <Phone className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all duration-200" />
@@ -247,31 +233,25 @@ const Footer = () => {
             <div className="flex items-center text-gray-400 text-sm">
               <span>© 2024 CodeCam. Made with</span>
               <Heart className="w-4 h-4 mx-1 text-red-500 fill-current animate-pulse" />
-              <span>by Aditya.</span>
+              <span>Aditya.</span>
             </div>
 
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <Link 
                 to="/privacy" 
-                className={`hover:text-white transition-all duration-200 ${
-                  isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                }`}
+                className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
               >
                 Privacy Policy
               </Link>
               <Link 
                 to="/terms" 
-                className={`hover:text-white transition-all duration-200 ${
-                  isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-300'
-                }`}
+                className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
               >
                 Terms of Service
               </Link>
               <Link 
                 to="/cookies" 
-                className={`hover:text-white transition-all duration-200 ${
-                  isDarkMode ? 'hover:text-white-400' : 'hover:text-white-300'
-                }`}
+                className={`footer-link ${isDarkMode ? '' : 'footer-link-light'}`}
               >
                 Cookie Policy
               </Link>
